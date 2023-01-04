@@ -1,7 +1,4 @@
-color_green = "#263D42"
-color_lightblue = "#5DADE2"
 color_white = "#FFFFFF"
-color_purple = "#EC00FF"
 
 palette_01 = "#355c7d"
 palette_02 = "#6c5b7b"

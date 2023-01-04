@@ -1,21 +1,3 @@
-"""
-inputs (radios):
-    include upper-case characters? [Y/N]
-    include lower-case characters? [Y/N]
-    include numbers? [Y/N]
-    include special characters? [Y/N]
-    password character length? [int] ( min: 6, max: 25, default: 10 )
-    included key word? [str]
-
-output (string):
-    single password (option to copy)
-    
-Sources:
-    https://www.youtube.com/watch?v=ibf5cx221hk
-    https://www.youtube.com/watch?v=UZX5kH72Yx4&list=PLSl7YuQjAQpnkJnkpikFqvKgCaQ0rA7J3&index=6&t=259s
-
-"""
-
 from tkinter import *
 import random
 from Constants import (
@@ -23,10 +5,7 @@ from Constants import (
     CHAR_LIST_LOWER,
     CHAR_LIST_SPECIAL,
     CHAR_LIST_NUMBERS,
-    color_green,
-    color_lightblue,
     color_white,
-    color_purple,
     palette_01,
     palette_02,
     palette_03,
@@ -40,6 +19,7 @@ from Constants import (
 root = Tk()
 root.title("Password Generator")
 root.geometry("500x500")
+root.iconbitmap("Project/Key-Icon.ico")
 
 include_upper = BooleanVar()
 include_lower = BooleanVar()
@@ -47,9 +27,7 @@ include_numbers = BooleanVar()
 include_special = BooleanVar()
 password_length = IntVar()
 key_word = StringVar()
-
 selected = StringVar()
-
 GENERATED_PASSWORD = StringVar()
 
 include_upper.set(True)
@@ -58,6 +36,12 @@ include_numbers.set(True)
 include_special.set(True)
 password_length.set(DEFAULT_password_length)
 key_word.set("")
+
+label_padx = 1
+label_pady = 5
+label_borderwidth = 5
+label_border = 10
+label_width = 25
 
 
 def generate_password(
@@ -148,12 +132,6 @@ CANVAS_root.place(relwidth=1, relheight=1, relx=0, rely=0)
 FRAME_widgets = Frame(root, bg=palette_02)
 FRAME_widgets.columnconfigure(0, weight=1)
 FRAME_widgets.columnconfigure(1, weight=1)
-
-label_padx = 1
-label_pady = 5
-label_borderwidth = 5
-label_border = 10
-label_width = 25
 
 LABEL_Title = Label(
     root,
@@ -283,7 +261,6 @@ CHECK_include_special.grid(row=3, column=1)
 
 ENTRY_key_word.grid(row=4, column=1)
 SCALE_password_length.grid(row=5, column=1)
-
 LABEL_GENERATED_PASSWORD.grid(
     row=7, column=0, columnspan=2, pady=label_pady, padx=label_padx
 )
@@ -293,8 +270,8 @@ BTN_copy_to_clipboard.grid(row=8, column=1)
 # LABEL_Title.place(anchor=CENTER, relx=0.5, rely=0.10)
 # FRAME_widgets.place(anchor=CENTER, relx=0.5, rely=0.5)
 
+# pack each parent widget to the root
 LABEL_Title.pack(anchor=CENTER, pady=20)
 FRAME_widgets.pack(anchor=CENTER)
-
 
 root.mainloop()
