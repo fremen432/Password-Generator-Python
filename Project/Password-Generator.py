@@ -19,7 +19,7 @@ from Constants import (
 root = Tk()
 root.title("Password Generator")
 root.geometry("500x500")
-root.iconbitmap("Project/Key-Icon.ico")
+# root.iconbitmap("Project/BlueKeyIcon.ico")
 
 include_upper = BooleanVar()
 include_lower = BooleanVar()
