@@ -8,7 +8,7 @@
 
 
 <div align="center">
-    <img src="./Password-Generator-Python-App-Screenshot.jpg" width="500px">
+    <img src="./src/images/Password-Generator-Python-App-Screenshot.jpg" width="500px">
 </div>
 
 ## Prerequisites

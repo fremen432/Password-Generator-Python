@@ -1,6 +1,6 @@
 from tkinter import *
 import random
-from Constants import (
+from constants import (
     CHAR_LIST_UPPER,
     CHAR_LIST_LOWER,
     CHAR_LIST_SPECIAL,
@@ -19,7 +19,7 @@ from Constants import (
 root = Tk()
 root.title("Password Generator")
 root.geometry("500x500")
-# root.iconbitmap("Project/BlueKeyIcon.ico")
+# root.iconbitmap("src/images/BlueKeyIcon.ico")
 
 include_upper = BooleanVar()
 include_lower = BooleanVar()
@@ -267,11 +267,10 @@ LABEL_GENERATED_PASSWORD.grid(
 BTN_generate_password.grid(row=8, column=0)
 BTN_copy_to_clipboard.grid(row=8, column=1)
 
-# LABEL_Title.place(anchor=CENTER, relx=0.5, rely=0.10)
-# FRAME_widgets.place(anchor=CENTER, relx=0.5, rely=0.5)
 
 # pack each parent widget to the root
 LABEL_Title.pack(anchor=CENTER, pady=20)
 FRAME_widgets.pack(anchor=CENTER)
+
 
 root.mainloop()
